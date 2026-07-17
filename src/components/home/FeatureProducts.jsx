@@ -26,7 +26,7 @@ const data = useMemo(() => {
         {loading && <p>Loading global data...</p>}
         {error && <p style={{ color: "red" }}>Error: {error}</p>}
         {data.length > 0 && !loading && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
             {data.map((item) => (
               <Cards key={item.id} product={item}  />
             ))}

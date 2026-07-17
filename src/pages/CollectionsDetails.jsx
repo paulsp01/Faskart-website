@@ -53,7 +53,7 @@ const CollectionsDetails = () => {
 
   return (
     <main className="bg-[#f1f3f6] px-3 py-6 sm:px-6">
-      <section className="mx-auto grid max-w-7xl gap-4 bg-white p-4 lg:grid-cols-[48%_1fr]">
+  <section className="mx-auto grid max-w-7xl gap-6  p-4 lg:grid-cols-[48%_1fr]">
         <div className="grid gap-4 sm:grid-cols-[84px_1fr]">
           <div className="order-2 flex gap-3 overflow-x-auto sm:order-1 sm:flex-col">
             {galleryImages.map((image) => (
@@ -66,9 +66,12 @@ const CollectionsDetails = () => {
                     image,
                   })
                 }
-                className={`h-20 w-20 shrink-0 border bg-white p-1 ${
-                  activeImage === image ? "border-[#2874f0]" : "border-gray-200"
-                }`}
+              className={`h-20 w-20 shrink-0 rounded-xl border-2 bg-[#F7F4EF] p-1 transition-all duration-300 ${
+  activeImage
+    === image
+      ? "border-[#8B5E3C] shadow-md"
+      : "border-[#DCC6A1] hover:border-[#8B5E3C]"
+}`}
               >
                 <img
                   src={image}
@@ -79,7 +82,7 @@ const CollectionsDetails = () => {
             ))}
           </div>
 
-          <div className="order-1 flex min-h-80 items-center justify-center border border-gray-200 bg-white p-4 sm:order-2">
+        <div className="order-1 flex min-h-80 items-center justify-center rounded-2xl border border-[#DCC6A1] bg-[#F7F4EF] p-4 shadow-lg sm:order-2">
             <img
               src={activeImage || selectedProduct.thumbnail}
               alt={selectedProduct.title}
@@ -88,40 +91,40 @@ const CollectionsDetails = () => {
           </div>
 
           <div className="order-3 grid gap-3 sm:col-start-2 sm:grid-cols-2">
-            <button className="bg-[#ff9f00] px-4 py-4 text-base font-semibold uppercase text-white">
+            <button className="rounded-xl bg-[#DCC6A1] px-4 py-4 text-base font-semibold uppercase text-[#3B2F2F] duration-300 hover:bg-[#8B5E3C] hover:text-white">
               Add to Cart
             </button>
-            <button className="bg-[#fb641b] px-4 py-4 text-base font-semibold uppercase text-white">
+            <button className="rounded-xl bg-[#3B2F2F] px-4 py-4 text-base font-semibold uppercase text-white duration-300 hover:bg-[#8B5E3C]">
               Buy Now
             </button>
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 px-1 py-2 sm:px-4">
+       <div className="flex flex-col gap-10 rounded-2xl border border-[#DCC6A1] bg-[#FFFFEF] p-6 shadow-lg">
           <div>
-            <p className="text-sm font-semibold uppercase text-gray-500">
+            <p className="text-sm font-semibold uppercase tracking-widest text-[#8B5E3C]">
               {selectedProduct.brand || selectedProduct.category}
             </p>
-            <h1 className="mt-2 text-2xl font-semibold leading-tight text-[#212121] sm:text-3xl">
+            <h1 className="mt-2 text-3xl font-bold leading-tight text-[#3B2F2F]">
               {selectedProduct.title}
             </h1>
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
-            <span className="rounded-sm bg-[#388e3c] px-2 py-1 text-sm font-semibold text-white">
+            <span className="rounded-full bg-[#8B5E3C] px-3 py-1 text-sm font-semibold text-white">
               {selectedProduct.rating} ★
             </span>
-            <span className="text-sm font-semibold text-gray-500">
+            <span className="text-sm font-semibold text-[#8B5E3C]">
               {selectedProduct.stock} items available
             </span>
           </div>
 
           <div>
-            <p className="text-sm font-semibold text-[#388e3c]">
+            <p className="text-sm font-semibold uppercase tracking-wide text-[#8B5E3C]">
               Special price
             </p>
             <div className="mt-1 flex flex-wrap items-end gap-3">
-              <span className="text-3xl font-semibold text-[#212121]">
+              <span className="text-4xl font-bold text-[#3B2F2F]">
                 ${selectedProduct.price}
               </span>
               {discountPercentage > 0 && (
@@ -129,7 +132,7 @@ const CollectionsDetails = () => {
                   <span className="text-lg text-gray-500 line-through">
                     ${originalPrice.toFixed(2)}
                   </span>
-                  <span className="text-base font-semibold text-[#388e3c]">
+                  <span className="rounded-full bg-[#DCC6A1] px-3 py-1 text-sm font-semibold text-[#3B2F2F]">
                     {Math.round(discountPercentage)}% off
                   </span>
                 </>
@@ -137,9 +140,9 @@ const CollectionsDetails = () => {
             </div>
           </div>
 
-          <div className="border-t border-gray-200 pt-4">
-            <h2 className="text-lg font-semibold text-[#212121]">Offers</h2>
-            <ul className="mt-3 space-y-2 text-sm text-[#212121]">
+         <div className="border-t border-gray-200 pt-4">
+            <h2 className="text-xl font-bold text-[#3B2F2F]">Offers</h2>
+            <ul className="mt-3 space-y-3 text-sm leading-6 text-[#3B2F2F]">
               <li>
                 <span className="font-semibold">Bank Offer:</span> 10% instant
                 discount on selected cards
@@ -155,11 +158,11 @@ const CollectionsDetails = () => {
             </ul>
           </div>
 
-          <div className="grid gap-4 border-t border-gray-200 pt-4 sm:grid-cols-[140px_1fr]">
-            <h2 className="text-sm font-semibold uppercase text-gray-500">
+          <div className="grid gap-4 border-t border-[#DCC6A1] pt-4 sm:grid-cols-[140px_1fr]">
+            <h2 className="text-sm font-semibold uppercase text-[#8B5E3C]">
               Highlights
             </h2>
-            <ul className="list-disc space-y-2 pl-5 text-sm leading-6 text-[#212121]">
+            <ul className="list-disc space-y-3 pl-5 text-sm leading-7 text-[#3B2F2F]">
               <li>{selectedProduct.description}</li>
               <li>Category: {selectedProduct.category}</li>
               <li>Minimum order quantity: {selectedProduct.minimumOrderQuantity}</li>
@@ -167,33 +170,33 @@ const CollectionsDetails = () => {
             </ul>
           </div>
 
-          <div className="grid gap-4 border-t border-gray-200 pt-4 sm:grid-cols-[140px_1fr]">
-            <h2 className="text-sm font-semibold uppercase text-gray-500">
+          <div className="grid gap-4 border-t border-[#DCC6A1] pt-4 sm:grid-cols-[140px_1fr]">
+            <h2 className="text-sm font-semibold uppercase text-[#8B5E3C]">
               Seller
             </h2>
-            <div className="text-sm leading-6 text-[#212121]">
-              <p className="font-semibold text-[#2874f0]">Lexus Retail</p>
+            <div className="text-sm leading-7 text-[#3B2F2F]">
+              <p className="font-semibold text-[#3B2F2F]">FASKART Retail</p>
               <p>{selectedProduct.returnPolicy}</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto mt-6 max-w-7xl bg-white p-4">
+      <section className="mx-auto mt-6 max-w-10xl bg-white p-4">
         <div className="mb-2 flex items-center justify-between gap-4 border-b border-gray-200 pb-4">
           <h2 className="text-xl font-semibold text-[#212121]">
             Related Products
           </h2>
           <Link
             to="/collections"
-            className="bg-[#2874f0] px-4 py-2 text-sm font-semibold uppercase text-white"
+            className="bg-[#8B5E3C] px-4 py-2 text-sm font-semibold uppercase text-white"
           >
             View All
           </Link>
         </div>
 
         {relatedProducts.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
             {relatedProducts.map((item) => (
               <Cards key={item.id} product={item} />
             ))}

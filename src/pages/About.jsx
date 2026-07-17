@@ -13,7 +13,7 @@ import imgFour from "../images/img-four.jpg"
 const About = () => {
   const box = [
   {
-    icon: <GroupOutlinedIcon sx={{ color: "#1A56DB",fontSize: {
+    icon: <GroupOutlinedIcon sx={{ color: "#8B5E3C",fontSize: {
                       xs: 20,
                       sm: 25,
                       md: 26,
@@ -23,7 +23,7 @@ const About = () => {
     title: "HAPPY CUSTOMERS",
   },
   {
-    icon: <LanguageOutlinedIcon sx={{ color: "#1A56DB",fontSize: {
+    icon: <LanguageOutlinedIcon sx={{ color: "#8B5E3C",fontSize: {
                       xs: 20,
                       sm: 25,
                       md: 26,
@@ -33,7 +33,7 @@ const About = () => {
     title: "GLOBAL BRANDS",
   },
   {
-    icon: <SupportAgentOutlinedIcon sx={{ color: "#1A56DB",fontSize: {
+    icon: <SupportAgentOutlinedIcon sx={{ color: "#8B5E3C",fontSize: {
                       xs: 20,
                       sm: 25,
                       md: 26,
@@ -43,7 +43,7 @@ const About = () => {
     title: "SUPPORT",
   },
   {
-    icon: <HomeRepairServiceOutlinedIcon sx={{ color: "#1A56DB",fontSize: {
+    icon: <HomeRepairServiceOutlinedIcon sx={{ color: "#8B5E3C",fontSize: {
                       xs: 20,
                       sm: 25,
                       md: 26,
@@ -110,19 +110,19 @@ const cards=[
   }
 ]
   return (
-    <main className="max-w-10xl mx-auto" >
-      <section className="w-full flex flex-col items-center justify-center  gap-5 p-8 lg:py-20">
+    <main className="max-w-10xl mx-auto  text-[#3B2F2F]">
+     <section className="w-full flex flex-col items-center justify-center gap-5 p-8 lg:py-20 ">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
           Our Journey
         </h1>
-        <p className=" w-full sm:w-2/3 opacity-70   lg:w-2/5 text-xs sm:text-sm lg:text-base text-center">
+       <p className="w-full sm:w-2/3 lg:w-2/5 text-xs sm:text-sm lg:text-base text-center text-[#8B5E3C]">
           Redefining the intersection of minimalist design and premium utility.
           We believe that everyday essentials should be crafted with
           uncompromising quality and quiet elegance.
         </p>
       </section>
 
-      <section className="w-full flex flex-col lg:flex-row items-center justify-center p-8 lg:px-10 lg:py-20 gap-10">
+<section className="w-full flex flex-col lg:flex-row items-center justify-center p-8 lg:px-10 lg:py-20 gap-10 ">
         <div className="">
           <img
             className="w-100 lg:h-150 sm:w-120 lg:w-210 rounded-xl"
@@ -135,14 +135,14 @@ const cards=[
             Our Values
           </h1>
           {values.map((item) => (
-     <div key={item.id} className="border border-black/15 p-6 shadow-lg flex flex-col gap-3 ">
-            <h2 className="text-sm sm:text-base font-bold  text-[#1A56DB]  lg:text-lg flex items-center sm:justify-center lg:justify-start  gap-2 ">
+     <div key={item.id} className="border border-[#DCC6A1] bg-[#F7F4EF] rounded-xl p-6 shadow-lg flex flex-col gap-3 hover:shadow-xl duration-300">
+           <h2 className="text-sm sm:text-base lg:text-lg font-bold text-[#3B2F2F] flex items-center sm:justify-center lg:justify-start gap-2">
               <span>
                 {item.icon}
               </span>
               {item.title}
             </h2>
-            <p className="opacity-70  sm:text-center text-xs sm:text-sm lg:text-base lg:text-start">
+           <p className="text-[#8B5E3C] text-xs sm:text-sm lg:text-base opacity-90 sm:text-center lg:text-start">
               {item.description}
             </p>
           </div>
@@ -151,12 +151,12 @@ const cards=[
         </div>
       </section>
 
-      <section className="w-full bg-gray-200 py-20 grid grid-cols-2 lg:grid-cols-4 gap-4   p-8">
+      <section className="w-full bg-[#DCC6A1] py-20 grid grid-cols-2 lg:grid-cols-4 gap-4   p-8">
         {
           box.map((item) => (
             <div key={item.id} className="flex flex-col gap-1 lg:gap-3 items-center justify-center">
          {item.icon}
-          <h1 className="text-2xl lg:text-3xl">{item.value}</h1>
+         <h1 className="text-2xl lg:text-3xl font-bold text-[#3B2F2F]">{item.value}</h1>
           <p className=" uppercase text-xs lg:text-sm opacity-50 font-bold text-nowrap">
            {item.title}
           </p>
@@ -166,15 +166,14 @@ const cards=[
         
       </section>
 
-
-      <section className="w-full py-20 flex flex-col items-center justify-center gap-4 px-8 lg:px-10">
+<section className="w-full py-20 flex flex-col items-center justify-center gap-4 px-8 lg:px-10 "></section><section className="w-full py-20 flex flex-col items-center justify-center gap-4 px-8 lg:px-10">
         <h1 className="text-3xl sm:text-4xl  lg:text-5xl font-bold">Meet The Team</h1>
-        <p className="text-xs sm:text-sm lg:text-base  opacity-70">The Visionari Behind LUXES </p>
+        <p className="text-xs sm:text-sm lg:text-base  text-[#8B5E3C]">The Visionari Behind LUXES </p>
         <div  className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-10 mt-5  ">
      {
       cards.map((item) => (
         
-       <div key={item.id} className="w-full   bg-gray-100 flex flex-col items-center justify-center border border-black/15 shadow-lg  rounded-lg px-15 py-6 gap-3">
+       <div key={item.id} className="w-full   bg-[#FFFFEF] flex flex-col items-center justify-center border border-[#DCC6A1] shadow-lg  rounded-lg px-15 py-6 gap-3">
      <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 rounded-full overflow-hidden">
             <img
               src={item.img}
@@ -182,8 +181,8 @@ const cards=[
               alt="Team member"
             />
           </div>
-     <p className="font-bold text-nowrap">{item.title}</p>
-     <p className="text-xs text-[#1A56DB] opacity-70 text-nowrap">{item.desc}</p>
+     <p className="font-bold text-nowrap text-[#3B2F2F]">{item.title}</p>
+     <p className="text-xs text-[#8B5E3C]  text-nowrap">{item.desc}</p>
     
       </div>
 
