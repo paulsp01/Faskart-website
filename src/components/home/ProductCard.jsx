@@ -26,7 +26,7 @@ const ProductCard = ({ product }) => {
   return (
     <div
       onClick={handleCardClick}
-      className="group h-full cursor-pointer overflow-hidden rounded-xl bg-white p-1 shadow-lg shadow-[#8B5E3C] flex flex-col"
+      className="group h-full cursor-pointer overflow-hidden rounded-xl bg-white p-1 shadow-lg shadow-[#8B5E3C] border-2 border-[#8B5E3C] flex flex-col"
     >
       <div className="relative flex items-center justify-center bg-[#F7F4EF] pt-4">
         <span className="absolute left-5 top-5 rounded-full bg-[#3B2F2F] px-4 py-2 text-xs font-semibold text-white">
