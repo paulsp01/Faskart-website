@@ -210,7 +210,7 @@ const NewArrivals = () => {
               </h3>{" "}
             </div>
           </div>
-          <div className="srink-0 grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 gap-10 ">
+          <div className="srink-0 grid grid-cols-1 sm:grid-cols-2  xl:grid-cols-3 gap-10 ">
             {product.map((product) => (
               <Cards key={product.id} product={product} />
             ))}
