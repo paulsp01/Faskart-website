@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Cards from "../components/home/ProductCard.jsx";
 import useDataContext from "../customHooks/useDataContext.jsx";
+import { CartContext } from "../context/ProductContext/CartContext.jsx";
 
 const CollectionsDetails = () => {
+  const {setCart,toggleItem}=useContext(CartContext);
   const { id } = useParams();
   const { loading, error, product } = useDataContext();
   const selectedProduct = product.find((item) => item.id === Number(id));
+
+  
   
   const galleryImages = selectedProduct?.images?.length
     ? selectedProduct.images
@@ -51,6 +55,12 @@ const CollectionsDetails = () => {
     return <p className="text-center text-2xl mt-10">Product not found.</p>;
   }
 
+
+  const handleAddToCart = (e) => {
+    e.stopPropagation();
+    toggleItem(selectedProduct, setCart);
+  };
+
   return (
     <main className="bg-[#f1f3f6] px-3 py-6 sm:px-6">
   <section className="mx-auto grid max-w-7xl gap-6  p-4 lg:grid-cols-[48%_1fr]">
@@ -91,7 +101,7 @@ const CollectionsDetails = () => {
           </div>
 
           <div className="order-3 grid gap-3 sm:col-start-2 sm:grid-cols-2">
-            <button className="rounded-xl bg-[#DCC6A1] px-4 py-4 text-base font-semibold uppercase text-[#3B2F2F] duration-300 hover:bg-[#8B5E3C] hover:text-white">
+            <button onClick={handleAddToCart} className="rounded-xl bg-[#DCC6A1] px-4 py-4 text-base font-semibold uppercase text-[#3B2F2F] duration-300 hover:bg-[#8B5E3C] hover:text-white">
               Add to Cart
             </button>
             <button className="rounded-xl bg-[#3B2F2F] px-4 py-4 text-base font-semibold uppercase text-white duration-300 hover:bg-[#8B5E3C]">
