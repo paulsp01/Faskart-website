@@ -6,6 +6,8 @@ import About from './pages/About'
 import Collections from './pages/Collections'
 import NewArrivals from './pages/NewArrivals'
 import CollectionsDetails from './pages/CollectionsDetails'
+import CartPage from './pages/CartPage'
+import Wishlist from './pages/Wishlist'
 
 const App = () => {
   return (
@@ -17,6 +19,8 @@ const App = () => {
         <Route path="/collection" element={<Collections/>}/>
          <Route path="/collections/:id" element={<CollectionsDetails />} />
          <Route path='/new-arrival' element={<NewArrivals/>}/>
+           <Route path='/cart' element={<CartPage/>}/>
+             <Route path='/wishlist' element={<Wishlist/>}/>
     </Route>
    </Routes>
    </>

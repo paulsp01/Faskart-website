@@ -38,10 +38,10 @@ const CategoryCard = ({category,setCategory}) => {
    {cat.map((c,index) => (
      <div key={index} 
       onClick={() => setCategory(c.category)}
-      className='bg-amber-950 w-50 h-50 rounded-full flex items-center justify-center'>
-      <div className='bg-[#F7F4EF] w-45 h-45 rounded-full flex flex-col items-center justify-center p-1'>
-      <img className='w-30 h-30' src={c.img}/>
-      <h1 className='text-[#3B2F2F] font-semibold  text-wrap'>{c.name}</h1>
+      className='bg-amber-950 w-30 h-30 lg:w-40 lg:h-40 rounded-full flex items-center justify-center'>
+      <div className='bg-[#F7F4EF] w-25 h-25 lg:w-35 lg:h-35 rounded-full flex flex-col items-center justify-center p-1'>
+      <img className='w-10 h-10 lg:w-20 lg:h-20' src={c.img}/>
+      <h1 className='text-[#3B2F2F] text-xs lg:text-base font-semibold  text-wrap'>{c.name}</h1>
     </div>
     </div>
    ))}
