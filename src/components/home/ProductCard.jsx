@@ -35,7 +35,7 @@ const ProductCard = ({ product }) => {
 
         <button
           onClick={handleWishlist}
-          className="absolute right-5 top-5 rounded-full bg-white p-2 shadow-md transition hover:bg-[#3B2F2F] hover:text-white"
+          className="absolute right-5 top-5 rounded-full  bg-white p-2 shadow-md transition hover:bg-[#3B2F2F] hover:text-white"
         >
           <FavoriteBorderIcon fontSize="small" />
         </button>
